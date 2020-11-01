@@ -8,7 +8,7 @@
 }
 .sidebar__wrapper {
   margin: 0 1.2rem;
-  padding: 8px;
+  padding: 20px;
   background-color: white;
   border-radius: 4px;
 
@@ -17,12 +17,18 @@
 }
 @media only screen and (min-width: 701px) and (max-width: 1024px) {
   .sidebar {
-    flex: 0 0 25%;
+    flex: 0 0 30%;
+  }
+  .sidebar__wrapper {
+    padding: 8px;
   }
 }
 @media only screen and (min-width: 1025px) {
   .sidebar {
-    flex: 0 0 15%;
+    flex: 0 0 20%;
+  }
+  .sidebar__wrapper {
+    padding: 8px;
   }
 }
 
@@ -41,7 +47,7 @@
 
 @media only screen and (min-width: 701px) and (max-width: 1024px) {
   .home__content {
-    flex: 0 0 75%;
+    flex: 0 0 70%;
   }
   .home__content-wrapper {
     margin: 0rem;
@@ -49,7 +55,7 @@
 }
 @media only screen and (min-width: 1025px) {
   .home__content {
-    flex: 0 0 84%;
+    flex: 0 0 80%;
   }
   .home__content-wrapper {
     margin: 0rem;
