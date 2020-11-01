@@ -1,4 +1,4 @@
-This project was created using React.js, Redux, Redux Form, React Router, Material-UI, Styled-components, Enzyme and Jest.
+This project was created using React.js, Redux, Redux Saga, React Router.
 
 - Redux : used for managing store
 - Redux Saga : used to manage the side-effects like accessing the API. 
