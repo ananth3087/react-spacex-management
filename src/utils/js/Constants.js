@@ -8,7 +8,7 @@ const years = () => {
 const Constants = {
   URLs: {
     API: {
-      LAUNCHES: "http://api.spacexdata.com/v3/launches?limit=100",
+      LAUNCHES: "https://api.spacexdata.com/v3/launches?limit=100",
     },
   },
 
