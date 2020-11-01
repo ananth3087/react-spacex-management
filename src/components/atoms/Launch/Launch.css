@@ -1,18 +1,26 @@
 .launch {
   background-color: white;
   padding: 1.6rem;
-  margin: 0rem 1.6rem 1.6rem 0rem;
-  flex: 0 0 100%;
+  margin-bottom: 1.6rem;
+  width: 100%;
   border-radius: 4px;
 }
 @media (min-width: 701px) and (max-width: 1024px) {
   .launch {
     flex: 0 0 36%;
+    margin: 0rem 1.6rem 1.6rem 0rem;
+  }
+  .launch:nth-child(even) {
+    margin: 0rem 0rem 1.6rem 0rem;
   }
 }
 @media (min-width: 1025px) {
   .launch {
     flex: 0 0 18%;
+    margin: 0rem 1.6rem 1.6rem 0rem;
+  }
+  .launch:nth-child(4n + 0) {
+    margin: 0rem 0rem 1.6rem 0rem;
   }
 }
 .launch__image-wrapper {
