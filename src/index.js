@@ -1,6 +1,31 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-import Layout from "./components/templates/Layout/Layout";
+import { render } from "react-dom";
+import createSagaMiddleware from "redux-saga";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import launchReducer from "./store/reducers/launch";
+import { watchReprints } from "./store/sagas/watcherSaga";
 import "./style.css";
-ReactDOM.render(<Layout />, document.getElementById("root"));
+import Routes from "./Routes";
+const rootReducer = combineReducers({
+  launch: launchReducer,
+});
+const sagaMiddleware = createSagaMiddleware();
+
+const composeEnhancers =
+  process.env.NODE_ENV === "development"
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : null || compose;
+
+const store = createStore(
+  rootReducer,
+  compose(applyMiddleware(sagaMiddleware))
+);
+sagaMiddleware.run(watchReprints);
+
+render(
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
+  document.getElementById("root")
+);

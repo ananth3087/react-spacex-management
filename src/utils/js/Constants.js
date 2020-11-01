@@ -18,16 +18,24 @@ const Constants = {
   FILTERS: {
     TITLE: "Filters",
     LAUNCH_YEAR: {
+      TYPE: "LAUNCH_YEAR",
       LABEL: "Launch Year",
       ITEMS: years(),
     },
     SUCCESSFUL_LAUNCH: {
+      TYPE: "SUCCESSFUL_LAUNCH",
       LABEL: "Successful Launch",
-      ITEMS: ["True", "False"],
+      ITEMS: ["true", "false"],
     },
     SUCCESSFUL_LANDING: {
+      TYPE: "SUCCESSFUL_LANDING",
       LABEL: "Successful Landing",
-      ITEMS: ["True", "False"],
+      ITEMS: ["true", "false"],
+    },
+  },
+  MESSAGE: {
+    ERROR: {
+      LAUNCH_NOT_FOUND: "Launch list not found",
     },
   },
   LAUNCH: {
