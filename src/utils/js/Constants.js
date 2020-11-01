@@ -6,6 +6,12 @@ const years = () => {
   return value;
 };
 const Constants = {
+  URLs: {
+    API: {
+      LAUNCHES: "http://api.spacexdata.com/v3/launches?limit=100",
+    },
+  },
+
   HEADER: {
     TITLE: "SpacEx Launch Programs",
   },

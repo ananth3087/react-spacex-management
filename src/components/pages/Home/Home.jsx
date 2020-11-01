@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Constants from "../../../utils/js/Constants";
 import "./Home.css";
 import CustomFilter from "../../organisms/CustomFilter/CustomFilter";
 import Launch from "../../atoms/Launch/Launch";
+import * as commonServices from "../../../services/common";
+
 const Home = (props) => {
+  const [lanches, setLaunches] = useState([]);
+  const fetchLanches = async () => {
+    try {
+      const response = await commonServices.get(Constants.URLs.API.LAUNCHES);
+      console.log(response);
+      setLaunches(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchLanches();
+  }, []);
+
   return (
     <div className="home">
       <div className="sidebar">
@@ -29,10 +46,12 @@ const Home = (props) => {
       </div>
       <div className="home__content">
         {Constants.LAUNCH.LIST.map((item, index) => {
+          const key = `Launches-${index}`;
           return (
             <Launch
               title={item.title}
               image={item.image}
+              key={key}
               properties={item.properties}
             />
           );
